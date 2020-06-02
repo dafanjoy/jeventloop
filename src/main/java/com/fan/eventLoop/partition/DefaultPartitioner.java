@@ -8,29 +8,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class DefaultPartitioner implements Partitioner {
 
 	private final ConcurrentMap<Integer, AtomicInteger> topicCounterMap = new ConcurrentHashMap<>();
-	/**
-	 * Compute the partition for the given record.
-	 *
-	 * @param topic
-	 *            The topic name
-	 * @param key
-	 *            The key to partition on (or null if no key)
-	 * @param keyBytes
-	 *            serialized key to partition on (or null if no key)
-	 * @param value
-	 *            The value to partition on or null
-	 * @param valueBytes
-	 *            serialized value to partition on or null
-	 * @param cluster
-	 *            The current cluster metadata
-	 */
+
 	public int partition(int core, Object key) {
 		if (key == null) {
 			int nextValue = nextValue(core);
 			return Math.abs(nextValue % core);
 
 		} else {
-			// hash the keyBytes to choose a partition
 			return Math.abs(key.hashCode() % core);
 		}
 	}
