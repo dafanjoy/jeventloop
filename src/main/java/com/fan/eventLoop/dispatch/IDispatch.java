@@ -1,6 +1,8 @@
 package com.fan.eventLoop.dispatch;
 
-public interface IDispatch<T>{
+import com.fan.eventLoop.record.EventRecord;
 
-	void dispatch(T context);
+public interface IDispatch<K, V> {
+
+	void dispatch(EventRecord<K, V> record);
 }

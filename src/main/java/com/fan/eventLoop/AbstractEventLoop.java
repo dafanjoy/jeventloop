@@ -3,11 +3,11 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
-import com.fan.eventLoop.context.EventContext;
+import com.fan.eventLoop.record.EventRecord;
 
 public abstract class AbstractEventLoop {
 
-	protected final ArrayBlockingQueue<EventContext> arrayBlockingQueue = new ArrayBlockingQueue<EventContext>(1024);
+	protected final ArrayBlockingQueue<EventRecord<?,?>> arrayBlockingQueue = new ArrayBlockingQueue<EventRecord<?,?>>(1024);
 
 	protected volatile Thread thread;
 

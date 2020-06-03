@@ -1,11 +1,10 @@
 package com.fan.eventLoop.dispatch;
 
 import com.fan.eventLoop.ThreadEventLoopGroup;
-import com.fan.eventLoop.context.EventContext;
 import com.fan.eventLoop.partition.DefaultPartitioner;
 import com.fan.eventLoop.partition.Partitioner;
 
-public abstract class AbstractDispatch implements IDispatch<EventContext> {
+public abstract class AbstractDispatch<K,V> implements IDispatch<K, V> {
 
 	protected ThreadEventLoopGroup group;
 

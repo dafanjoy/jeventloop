@@ -3,7 +3,7 @@ package com.fan.eventLoop;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadFactory;
 
-import com.fan.eventLoop.context.EventContext;
+import com.fan.eventLoop.record.EventRecord;
 import com.fan.eventLoop.thread.EventThreadFactory;
 import com.fan.eventLoop.thread.ThreadPerTaskExecutor;
 
@@ -30,7 +30,7 @@ public class ThreadEventLoopGroup {
 		return new EventThreadFactory();
 	}
 
-	public void next(int partaion, EventContext context) { 
+	public void next(int partaion, EventRecord<?, ?> context) { 
 		children[partaion].execute(context);
 	}
 
