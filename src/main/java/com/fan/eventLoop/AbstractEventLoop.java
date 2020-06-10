@@ -3,6 +3,8 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
+import com.fan.eventLoop.handler.EventHandler;
+import com.fan.eventLoop.handler.IHandler;
 import com.fan.eventLoop.record.EventRecord;
 
 public abstract class AbstractEventLoop {
@@ -12,6 +14,8 @@ public abstract class AbstractEventLoop {
 	protected volatile Thread thread;
 
 	protected final Executor executor;
+	
+	protected IHandler iHandler = new EventHandler();
 
 	private static final AtomicIntegerFieldUpdater<AbstractEventLoop> STATE_UPDATER = AtomicIntegerFieldUpdater
 			.newUpdater(AbstractEventLoop.class, "state");
@@ -40,7 +44,6 @@ public abstract class AbstractEventLoop {
 			}
 		}
 	}
-	
 
 	protected void doStartThread() {
 		assert thread == null;
@@ -54,9 +57,5 @@ public abstract class AbstractEventLoop {
 		});
 	}
 	
-
-    /**
-     *
-     */
     protected abstract void run();
 }

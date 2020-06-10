@@ -10,7 +10,7 @@ public class ThreadEventLoop extends AbstractEventLoop {
 		for (;;) {
 			try {
 				EventRecord<?, ?> record = arrayBlockingQueue.take();
-				System.err.println(record.value());
+				iHandler.execute(record);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				System.err.println(e.getMessage());
