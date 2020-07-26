@@ -13,16 +13,16 @@ public class DefaultPartitioner implements Partitioner {
 
 	public int partition(int core, Integer partition, Object key) {
 		if (partition != null ) {
-			if(partition>core) {
+			if(partition>core) {//可以自己指定partition，但不能大于core，也就是group个数
 				throw new IllegalArgumentException(String
 						.format("Invalid partition: %d. partition should always be greater than core.", partition));
 			}
 			return partition;
-		} else if (partition == null && key == null) {
+		} else if (partition == null && key == null) {//如果没有指定key或partition，则采用自增取余模式
 			int nextValue = nextValue(core);
 			return ConstantUtil.toPositive(nextValue) % core;
 
-		} else {
+		} else {//如果partition为空，key不为空，则根据hash取余
 			return Math.abs(key.hashCode() % core);
 		}
 	}

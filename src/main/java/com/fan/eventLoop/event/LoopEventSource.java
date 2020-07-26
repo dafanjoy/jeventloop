@@ -32,7 +32,6 @@ public class LoopEventSource {
 			}
 
 		} catch (Exception e) {
-			// 这里也无法得知发来消息的是谁，所以只能直接退出了
 			e.printStackTrace();
 		}
 
