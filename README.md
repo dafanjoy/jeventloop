@@ -1,4 +1,4 @@
-#fan-evenloop  
+#jevenloop  
 参照Netty中EventLoop的事件分发线程模型，供学习参考使用  
 特点：  
 >1、结合事件监听机制，统一内部消息模型，为分发策略的制定与无锁化提供基础；   
