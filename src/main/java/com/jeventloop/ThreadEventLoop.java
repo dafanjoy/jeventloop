@@ -1,8 +1,8 @@
-package com.fan.eventLoop;
+package com.jeventloop;
 
 import java.util.concurrent.Executor;
 
-import com.fan.eventLoop.record.EventRecord;
+import com.jeventloop.record.EventRecord;
 
 public class ThreadEventLoop extends AbstractEventLoop {
 	

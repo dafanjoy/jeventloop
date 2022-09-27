@@ -1,11 +1,11 @@
-package com.fan.eventLoop;
+package com.jeventloop;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
-import com.fan.eventLoop.handler.EventHandler;
-import com.fan.eventLoop.handler.IHandler;
-import com.fan.eventLoop.record.EventRecord;
+import com.jeventloop.handler.EventHandler;
+import com.jeventloop.handler.IHandler;
+import com.jeventloop.record.EventRecord;
 
 public abstract class AbstractEventLoop {
 

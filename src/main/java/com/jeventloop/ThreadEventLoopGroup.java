@@ -1,11 +1,11 @@
-package com.fan.eventLoop;
+package com.jeventloop;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadFactory;
 
-import com.fan.eventLoop.record.EventRecord;
-import com.fan.eventLoop.thread.EventThreadFactory;
-import com.fan.eventLoop.thread.ThreadPerTaskExecutor;
+import com.jeventloop.record.EventRecord;
+import com.jeventloop.thread.EventThreadFactory;
+import com.jeventloop.thread.ThreadPerTaskExecutor;
 
 public class ThreadEventLoopGroup {
 
