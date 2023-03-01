@@ -7,6 +7,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import com.jeventloop.utils.ConstantUtil;
 
+/**
+ * 默认partition策略
+ * @author DaFan
+ *
+ */
 public class DefaultPartitioner implements Partitioner {
 
 	private final ConcurrentMap<Integer, AtomicInteger> topicCounterMap = new ConcurrentHashMap<>();

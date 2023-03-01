@@ -2,6 +2,13 @@ package com.jeventloop.dispatch;
 
 import com.jeventloop.record.EventRecord;
 
+/**
+ * EventLoop消息分发器
+ * @author DaFan
+ *
+ * @param <K>
+ * @param <V>
+ */
 public class EventLoopDispatch<K, V> extends AbstractDispatch<K, V> {
 
 	public EventLoopDispatch(int core) {
